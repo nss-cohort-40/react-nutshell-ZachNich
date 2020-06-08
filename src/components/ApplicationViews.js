@@ -1,41 +1,30 @@
 import { Route, Redirect } from "react-router-dom";
-import React, { Component } from "react";
+import React from "react";
+import AccountForm from './AccountForm'
 
-export default class ApplicationViews extends Component {
+const ApplicationViews = props => {
+  const hasUser = props.hasUser
+  const setUser = props.setUser
 
-  render() {
-    return (
-      <React.Fragment>
-
-        <Route
-          exact path="/" render={props => {
-            return null
-            // Remove null and return the component which will show news articles
-          }}
-        />
-
-        <Route
-          path="/friends" render={props => {
-            return null
-            // Remove null and return the component which will show list of friends
-          }}
-        />
-
-        <Route
-          path="/messages" render={props => {
-            return null
-            // Remove null and return the component which will show the messages
-          }}
-        />
-
-        <Route
-          path="/tasks" render={props => {
-            return null
-            // Remove null and return the component which will show the user's tasks
-          }}
-        />
-        
-      </React.Fragment>
-    );
-  }
+  return (
+    <>
+      <Route exact path="/" render={props => 
+        hasUser ? null : <Redirect to="/login" />
+      } />
+      <Route path="/friends" render={props => 
+        hasUser ? null : <Redirect to="/login" />
+      } />
+      <Route path="/messages" render={props => 
+        hasUser ? null : <Redirect to="/login" />
+      } />
+      <Route path="/tasks" render={props => 
+        hasUser ? null : <Redirect to="/login" />
+      } />
+      <Route path="/login" render={props => {
+        return <AccountForm {...props} setUser={setUser} />
+      }} />
+    </>
+  );
 }
+
+export default ApplicationViews
