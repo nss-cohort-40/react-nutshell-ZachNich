@@ -28,7 +28,7 @@ export default {
         }).then(result => result.json())
     },
     update(arrName, object) {
-        return fetch(`${url}/${object.id}`, {
+        return fetch(`${url}/${arrName}/${object.id}`, {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json"
