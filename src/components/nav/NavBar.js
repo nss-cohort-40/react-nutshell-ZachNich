@@ -13,12 +13,6 @@ const NavBar = props => {
         <nav className="navbar navbar-light light-blue flex-md-nowrap p-0 shadow">
             <ul className="nav nav-pills nav-fill">
                 {props.hasUser
-                ?
-                <li className="nav-item">
-                    <Link className="nav-link" to="/">News</Link>
-                </li>
-                : null }
-                {props.hasUser
                 ? 
                 <li className="nav-item">
                     <Link className="nav-link" to="/">News</Link>

@@ -1,0 +1,17 @@
+TASKS
+
+Goals:
+
+Shows two list of either current or complete task components that each have edit, delete, or complete (for incompletes)
+User can add tasks to list
+User can switch between current task list and completed task list
+
+Components:
+
+TaskCard -  title, description, completedDate, delete btn
+            conditionally: current tasks - edit btn, finish task btn
+
+TaskList - List that displays TaskCards, shows either currentTasks or completedTasks, has currentTasks btn & completedTasks btn to toggle, add task btn to trigger add task form
+
+AddTaskForm - input fields for creating task (title, description, completedDate), discard btn & add task btn to add to DB
+
