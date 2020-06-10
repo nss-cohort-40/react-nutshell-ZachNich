@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import ApiManager from '../modules/ApiManager'
 
 const AccountForm = props => {
-    const [credentials, setCredentials] = useState({ username: '', email: '', password: '' })
+    const [credentials, setCredentials] = useState({ username: '', email: '', password: '', id: null })
 
     const handleFieldChange = e => {
         const stateToChange = { ...credentials }
@@ -29,8 +29,8 @@ const AccountForm = props => {
         ApiManager.getByProperty('users', 'username', credentials.username)
             .then(data => {
                 if (data.length > 0) {
-                    console.log('data', data, 'creds', credentials)
                     if (data[0].email === credentials.email && data[0].password === credentials.password) {
+                        credentials.id = data[0].id
                         props.setUser(credentials)
                         props.history.push('/')
                     } else {

@@ -7,7 +7,7 @@ const TaskCard = props => {
                 <p className="task_title">{props.task.title}</p>
                 <p className="task_description">{props.task.description}</p>
                 <p className="task_compDate">{props.task.compDate}</p>
-                {props.task.complete === false ? <button type="button" onClick={() => props.editTask(props.task)}>Edit</button> : null}
+                {props.task.complete === false ? <button type="button" onClick={() => props.history.push(`/tasks/edit/${props.task.id}`)}>Edit</button> : null}
                 {props.task.complete === false ? <button type="button" onClick={() => props.deleteTask(props.task.id)}>Delete</button> : null}
                 {props.task.complete === false ? <button type="button" 
                     onClick={() => {

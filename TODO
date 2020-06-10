@@ -1,3 +1,5 @@
+***CAN ONLY PASS DOWN PROPS to a COMPONENT, not to elements or buttons, etc.***
+
 TASKS
 
 Goals:
@@ -16,3 +18,11 @@ TaskList - List that displays TaskCards, shows either currentTasks or completedT
 AddTaskForm - input fields for creating task (title, description, completedDate), discard btn & add task btn to add to DB
 
 Also need to be able to EDIT TASK, would like to use task form for that
+
+
+6/11/20 -
+
+1. make sure userId is being stored and accessed correctly from sessionStorage
+2. access userId when conditionally rendering TaskList TaskCards
+3. Make submit btn on edit task form actually PUT the task and load /tasks
+4. make submit btn on add task form load /tasks after POSTing new task

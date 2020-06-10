@@ -19,10 +19,6 @@ const TaskList = props => {
             .then(() => setIsComplete(true))
     }
 
-    const editTask = task => {
-        
-    }
-
     useEffect(() => {
         const getTasks = () => ApiManager.getByProperty('tasks', 'complete', !isComplete)
         getTasks().then(data => setTasks(data))
@@ -33,7 +29,7 @@ const TaskList = props => {
                 <button type="button" onClick={() => props.history.push('/tasks/add')}>Add Task</button>
                 {isComplete ? <button type="button">Current</button> : <button type="button" onClick={handleToggle}>Current</button>}
                 {isComplete ? <button type="button" onClick={handleToggle}>Completed</button> : <button type="button">Completed</button>}
-                {tasks.map(task => <TaskCard key={task.id} id={task.id} task={task} completeTask={completeTask} deleteTask={deleteTask} />)}
+                {tasks.map(task => <TaskCard key={task.id} id={task.id} task={task} completeTask={completeTask} deleteTask={deleteTask} {...props} />)}
             </section>
         )
 }
