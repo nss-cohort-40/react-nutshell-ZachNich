@@ -19,6 +19,10 @@ const TaskList = props => {
             .then(() => setIsComplete(true))
     }
 
+    const editTask = task => {
+        
+    }
+
     useEffect(() => {
         const getTasks = () => ApiManager.getByProperty('tasks', 'complete', !isComplete)
         getTasks().then(data => setTasks(data))

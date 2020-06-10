@@ -26,8 +26,20 @@ const AccountForm = props => {
 
     const handleLogin = e => {
         e.preventDefault()
-        props.setUser(credentials)
-        props.history.push('/')
+        ApiManager.getByProperty('users', 'username', credentials.username)
+            .then(data => {
+                if (data.length > 0) {
+                    console.log('data', data, 'creds', credentials)
+                    if (data[0].email === credentials.email && data[0].password === credentials.password) {
+                        props.setUser(credentials)
+                        props.history.push('/')
+                    } else {
+                        window.alert('Incorrect email or password. Please try again.')
+                    }
+                } else {
+                    window.alert('No username found. Please try again or create an account.')
+                }
+            })
     }
 
     return (
