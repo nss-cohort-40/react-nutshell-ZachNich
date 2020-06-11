@@ -4,12 +4,12 @@ import ApplicationViews from "./ApplicationViews";
 import "./Nutshell.css";
 
 const Nutshell = () => {
-  const isAuthenticated = () => sessionStorage.getItem('credentials') !== null;
+  const isAuthenticated = () => sessionStorage.getItem('user') !== null;
   
   const [hasUser, setHasUser] = useState(isAuthenticated())
 
   const setUser = user => {
-    sessionStorage.setItem('credentials', JSON.stringify(user))
+    sessionStorage.setItem('user', JSON.stringify(user))
     setHasUser(isAuthenticated())
   }
   
