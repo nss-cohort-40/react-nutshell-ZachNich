@@ -22,7 +22,8 @@ Also need to be able to EDIT TASK, would like to use task form for that
 
 6/11/20 -
 
-1. make sure userId is being stored and accessed correctly from sessionStorage
-2. access userId when conditionally rendering TaskList TaskCards
-3. Make submit btn on edit task form actually PUT the task and load /tasks
-4. make submit btn on add task form load /tasks after POSTing new task
+1. DONE make sure userId is being stored and accessed correctly from sessionStorage
+2. DONE access userId when conditionally rendering TaskList TaskCards
+3. DONE Make submit btn on edit task form actually PUT the task and load /tasks
+4. DONE make submit btn on add task form load /tasks after POSTing new task
+5. DONE Pre-populate TaskForm fields when edit btn pressed
